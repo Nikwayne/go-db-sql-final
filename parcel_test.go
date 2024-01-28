@@ -68,7 +68,7 @@ func TestSetAddress(t *testing.T) {
 	// prepare
 	db, err := sql.Open("sqlite", "tracker.db")
 	if err != nil {
-		fmt.Println(err)
+		t.Fatalf("Failed to open database: %v", err)
 		return
 	}
 	defer db.Close()
